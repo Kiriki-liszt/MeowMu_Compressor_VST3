@@ -80,11 +80,11 @@ namespace yg331 {
 		flags = Vst::ParameterInfo::kCanAutomate;
 		parameters.addParameter(STR16("Speed"), nullptr, stepCount, defaultVal, flags, tag);
 
-		tag = kParamTrim;
+		tag = kParamGain;
 		stepCount = 0;
-		defaultVal = 1.0;
+		defaultVal = 0.0;
 		flags = Vst::ParameterInfo::kCanAutomate;
-		parameters.addParameter(STR16("Trim"), nullptr, stepCount, defaultVal, flags, tag);
+		parameters.addParameter(STR16("Gain"), nullptr, stepCount, defaultVal, flags, tag);
 
 		tag = kParamMix;
 		stepCount = 0;
@@ -142,10 +142,10 @@ namespace yg331 {
 			return kResultFalse;
 		setParamNormalized(kParamSpeed, savedSpeed);
 
-		float savedTrim = 0.f;
-		if (streamer.readFloat(savedTrim) == false)
+		float savedGain = 0.f;
+		if (streamer.readFloat(savedGain) == false)
 			return kResultFalse;
-		setParamNormalized(kParamTrim, savedTrim);
+		setParamNormalized(kParamGain, savedGain);
 
 		float savedMix = 0.f;
 		if (streamer.readFloat(savedMix) == false)

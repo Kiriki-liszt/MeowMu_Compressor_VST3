@@ -25,7 +25,7 @@ namespace yg331 {
 		flip (false),
 		fParamInput (0.5),	fParamOutput (0.5),
 		fParamComp (0.3),	fParamSpeed (0.6),
-		fParamTrim (1.0),	fParamMix (1.0),
+		fParamGain (0.0),	fParamMix (1.0),
 		fInVuPPM (0.f),		fOutVuPPM (0.f),	fGRVuPPM (0.f),
 		fInVuPPMOld (0.f),	fOutVuPPMOld (0.f),	fGRVuPPMOld (0.f),
 		bBypass (false)
@@ -132,8 +132,8 @@ namespace yg331 {
 						case kParamSpeed:
 							fParamSpeed = (float)value;
 							break;
-						case kParamTrim:
-							fParamTrim = (float)value;
+						case kParamGain:
+							fParamGain = (float)value;
 							break;
 						case kParamMix:
 							fParamMix = (float)value;
@@ -287,7 +287,7 @@ namespace yg331 {
 		Vst::Sample64 fastest = sqrt(release);
 		//speed settings around release
 		Vst::Sample64 coefficient;
-		Vst::Sample64 output = outGain * fParamTrim;
+		Vst::Sample64 output = norm_to_gain((0.5 * fParamGain) + 0.5);
 		Vst::Sample64 wet = fParamMix;
 		Vst::Sample64 squaredSampleL;
 		Vst::Sample64 squaredSampleR;
@@ -463,7 +463,7 @@ namespace yg331 {
 			if (tmpGR > (inputSampleR / drySampleR)) { tmpGR = (inputSampleR / drySampleR); }
 
 
-			if (output < 1.0) {
+			if (output != 1.0) {
 				inputSampleL *= output;
 				inputSampleR *= output;
 			}
@@ -624,8 +624,8 @@ namespace yg331 {
 		if (streamer.readFloat(savedSpeed) == false)
 			return kResultFalse;
 
-		float savedTrim = 0.f;
-		if (streamer.readFloat(savedTrim) == false)
+		float savedGain = 0.f;
+		if (streamer.readFloat(savedGain) == false)
 			return kResultFalse;
 
 		float savedMix = 0.f;
@@ -640,7 +640,7 @@ namespace yg331 {
 		fParamOutput = savedOutput;
 		fParamComp = savedComp;
 		fParamSpeed = savedSpeed;
-		fParamTrim = savedTrim;
+		fParamGain = savedGain;
 		fParamMix = savedMix;
 		bBypass = savedBypass > 0;
 
@@ -679,7 +679,7 @@ namespace yg331 {
 		streamer.writeFloat(fParamOutput);
 		streamer.writeFloat(fParamComp);
 		streamer.writeFloat(fParamSpeed);
-		streamer.writeFloat(fParamTrim);
+		streamer.writeFloat(fParamGain);
 		streamer.writeFloat(fParamMix);
 		streamer.writeInt32(bBypass ? 1 : 0);
 

@@ -22,7 +22,7 @@ enum {
 	kParamOutput,
 	kParamComp,
 	kParamSpeed,
-	kParamTrim,
+	kParamGain,
 	kParamMix,
 	kParamInVuPPM,// Input VuPPM
 	kParamOutVuPPM,		// Output VuPPM

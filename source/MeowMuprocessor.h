@@ -96,7 +96,7 @@ protected:
 	Vst::Sample32 fParamOutput = 0.0;
 	Vst::Sample32 fParamComp;
 	Vst::Sample32 fParamSpeed;
-	Vst::Sample32 fParamTrim;
+	Vst::Sample32 fParamGain;
 	Vst::Sample32 fParamMix;
 	Vst::Sample32 fInVuPPM;
 	Vst::Sample32 fOutVuPPM;
