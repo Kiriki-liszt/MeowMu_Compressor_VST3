@@ -22,3 +22,6 @@ Built for VST3, but compatible to VST2 also.
 
 VSTSDK 3.7.7 used  
 VSTGUI 4.12 used  
+
+TODO:
+  * Trim -> Gain, as trim is no longer needed.  
