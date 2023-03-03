@@ -25,3 +25,8 @@ VSTGUI 4.12 used
 
 v1.0.0 : initial.  
 v1.0.1 : Trim to gain.  
+v1.0.2 : Typooooooooooooo.  
+
+TODO: 
+  * threshold is too high now. 
+  

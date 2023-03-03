@@ -98,7 +98,7 @@ namespace yg331 {
 		flags = Vst::ParameterInfo::kCanAutomate | Vst::ParameterInfo::kIsBypass;
 		parameters.addParameter(STR16("Bypass"), nullptr, stepCount, defaultVal, flags, tag);
 
-
+		 
 
 
 		return result;
