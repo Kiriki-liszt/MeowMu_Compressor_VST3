@@ -1,0 +1,391 @@
+{
+	"vstgui-ui-description": {
+		"version": "1",
+		"bitmaps": {
+			"background": {
+				"path": "background.png"
+			},
+			"button_onoff": {
+				"path": "button_onoff.png"
+			},
+			"knob_black": {
+				"path": "knob_black.png"
+			},
+			"knob_blue": {
+				"path": "knob_blue.png"
+			},
+			"knob_gray": {
+				"path": "knob_gray.png"
+			},
+			"knob_green": {
+				"path": "knob_green.png"
+			},
+			"knob_violet": {
+				"path": "knob_violet.png"
+			},
+			"meter_off": {
+				"path": "meter_off.png"
+			},
+			"meter_on": {
+				"path": "meter_on.png"
+			},
+			"over": {
+				"path": "over.png"
+			},
+			"background#2x": {
+				"path": "background_2x.png",
+				"scale-factor": "2"
+			},
+			"button_onoff#2x": {
+				"path": "button_onoff_2x.png"
+			},
+			"knob_black#2x": {
+				"path": "knob_black_2x.png",
+				"scale-factor": "2"
+			},
+			"knob_blue#2x": {
+				"path": "knob_blue_2x.png",
+				"scale-factor": "2"
+			},
+			"knob_gray#2x": {
+				"path": "knob_gray_2x.png",
+				"scale-factor": "2"
+			},
+			"knob_green#2x": {
+				"path": "knob_green_2x.png",
+				"scale-factor": "2"
+			},
+			"knob_violet#2x": {
+				"path": "knob_violet_2x.png",
+				"scale-factor": "2"
+			},
+			"meter_off#2x": {
+				"path": "meter_off_2x.png",
+				"scale-factor": "2"
+			},
+			"meter_on#2x": {
+				"path": "meter_on_2x.png",
+				"scale-factor": "2"
+			},
+			"over#2x": {
+				"path": "over_2x.png",
+				"scale-factor": "2"
+			}
+		},
+		"fonts": {},
+		"colors": {},
+		"control-tags": {
+			"Input": "0",
+			"Output": "1",
+			"Comp": "2",
+			"Speed": "3",
+			"Trim": "4",
+			"Mix": "5",
+			"InVuPPM": "6",
+			"OutVuPPM": "7",
+			"GRVuPPM": "8",
+			"Bypass": "9"
+		},
+		"custom": {
+			"FocusDrawing": {},
+			"VST3Editor": {
+				"Path": "MeowMueditor.uidesc"
+			},
+			"UIGridController": {
+				"Grids": "1x 1,5x 5,10x 10,12x 12,15x 15",
+				"Size": "1, 1"
+			},
+			"UIEditController": {
+				"EditViewScale": "1",
+				"EditorSize": "0, 0, 723, 656",
+				"SplitViewSize_0_0": "0.7936507936507936067371815624937880784273",
+				"SplitViewSize_0_1": "0.174603174603174593482179943748633377254",
+				"SplitViewSize_1_0": "0.4793650793650793828781786487525096163154",
+				"SplitViewSize_1_1": "0.5126984126984126532988739199936389923096",
+				"SplitViewSize_2_0": "0.7510373443983402452772679680492728948593",
+				"SplitViewSize_2_1": "0.2420470262793914251187032959933276288211",
+				"TabSwitchValue": "4",
+				"UI Theme": "Light",
+				"Version": "1"
+			},
+			"UITemplateController": {
+				"SelectedTemplate": "view"
+			},
+			"UIAttributesController": {},
+			"UIViewCreatorDataSource": {
+				"SelectedRow": "-1"
+			},
+			"UIBitmapsDataSource": {
+				"SelectedRow": "2"
+			},
+			"UITagsDataSource": {
+				"SelectedRow": "-1"
+			}
+		},
+		"templates": {
+			"view": {
+				"attributes": {
+					"background-color": "~ GreyCColor",
+					"background-color-draw-style": "filled and stroked",
+					"class": "CViewContainer",
+					"mouse-enabled": "true",
+					"opacity": "1",
+					"origin": "0, 0",
+					"size": "250, 400",
+					"transparent": "false",
+					"wants-focus": "false"
+				},
+				"children": {
+					"CView": {
+						"attributes": {
+							"bitmap": "background",
+							"class": "CView",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "0, 0",
+							"size": "250, 400",
+							"transparent": "false",
+							"wants-focus": "false"
+						}
+					},
+					"CVuMeter": {
+						"attributes": {
+							"bitmap": "meter_on",
+							"class": "CVuMeter",
+							"control-tag": "InVuPPM",
+							"decrease-step-value": "0.1",
+							"default-value": "0",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "false",
+							"num-led": "500",
+							"off-bitmap": "meter_off",
+							"opacity": "1",
+							"orientation": "vertical",
+							"origin": "39, 30",
+							"size": "20, 270",
+							"transparent": "false",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1"
+						}
+					},
+					"CVuMeter": {
+						"attributes": {
+							"bitmap": "meter_off",
+							"class": "CVuMeter",
+							"control-tag": "GRVuPPM",
+							"decrease-step-value": "0.1",
+							"default-value": "0",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "false",
+							"num-led": "500",
+							"off-bitmap": "meter_on",
+							"opacity": "1",
+							"orientation": "vertical",
+							"origin": "76, 30",
+							"size": "20, 135",
+							"transparent": "false",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1"
+						}
+					},
+					"CVuMeter": {
+						"attributes": {
+							"bitmap": "meter_on",
+							"class": "CVuMeter",
+							"control-tag": "OutVuPPM",
+							"decrease-step-value": "0.1",
+							"default-value": "0",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "false",
+							"num-led": "500",
+							"off-bitmap": "meter_off",
+							"opacity": "1",
+							"orientation": "vertical",
+							"origin": "113, 30",
+							"size": "20, 270",
+							"transparent": "false",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1"
+						}
+					},
+					"CView": {
+						"attributes": {
+							"bitmap": "over",
+							"class": "CView",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "24, 20",
+							"size": "125, 310",
+							"transparent": "false",
+							"wants-focus": "false"
+						}
+					},
+					"COnOffButton": {
+						"attributes": {
+							"bitmap": "button_onoff",
+							"class": "COnOffButton",
+							"control-tag": "Bypass",
+							"default-value": "0",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "175, 343",
+							"size": "44, 60",
+							"transparent": "false",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_black",
+							"class": "CAnimKnob",
+							"control-tag": "Input",
+							"default-value": "0.5",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "20, 335",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_black",
+							"class": "CAnimKnob",
+							"control-tag": "Output",
+							"default-value": "0.5",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "93, 335",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_violet",
+							"class": "CAnimKnob",
+							"control-tag": "Comp",
+							"default-value": "0.2",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "167, 30",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_blue",
+							"class": "CAnimKnob",
+							"control-tag": "Speed",
+							"default-value": "0.8",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "167, 108",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_green",
+							"class": "CAnimKnob",
+							"control-tag": "Trim",
+							"default-value": "1",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "167, 182",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					},
+					"CAnimKnob": {
+						"attributes": {
+							"angle-range": "270",
+							"angle-start": "135",
+							"bitmap": "knob_gray",
+							"class": "CAnimKnob",
+							"control-tag": "Mix",
+							"default-value": "1",
+							"height-of-one-image": "60",
+							"inverse-bitmap": "false",
+							"max-value": "1",
+							"min-value": "0",
+							"mouse-enabled": "true",
+							"opacity": "1",
+							"origin": "167, 258",
+							"size": "60, 60",
+							"sub-pixmaps": "127",
+							"transparent": "false",
+							"value-inset": "0",
+							"wants-focus": "false",
+							"wheel-inc-value": "0.1",
+							"zoom-factor": "1.5"
+						}
+					}
+				}
+			}
+		}
+	}
+}
