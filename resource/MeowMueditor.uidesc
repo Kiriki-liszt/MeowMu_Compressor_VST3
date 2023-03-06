@@ -217,7 +217,7 @@
 							"class": "CView",
 							"mouse-enabled": "true",
 							"opacity": "1",
-							"origin": "24, 20",
+							"origin": "22, 20",
 							"size": "125, 310",
 							"transparent": "false",
 							"wants-focus": "false"

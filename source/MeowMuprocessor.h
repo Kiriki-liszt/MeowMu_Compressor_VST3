@@ -90,10 +90,10 @@ protected:
 	uint32_t fpdL = 1;
 	uint32_t fpdR = 1;
 	//default stuff
-	Vst::Sample64 In_db = 1.0;
-	Vst::Sample64 Out_db = 1.0;
-	Vst::Sample32 fParamInput = 0.0;
-	Vst::Sample32 fParamOutput = 0.0;
+	Vst::Sample64 In_db;
+	Vst::Sample64 Out_db;
+	Vst::Sample32 fParamInput;
+	Vst::Sample32 fParamOutput;
 	Vst::Sample32 fParamComp;
 	Vst::Sample32 fParamSpeed;
 	Vst::Sample32 fParamGain;

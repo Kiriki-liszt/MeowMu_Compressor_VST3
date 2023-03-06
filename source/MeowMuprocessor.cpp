@@ -23,8 +23,8 @@ namespace yg331 {
 		muSpeedAR (10000),	muSpeedBR (10000),	muCoefficientAR (1),	muCoefficientBR (1),
 		muAttackR (0.0),	muNewSpeedR (0.0),	muVaryR (1),			previousR (0.0),
 		flip (false),
-		fParamInput (0.5),	fParamOutput (0.5),
-		fParamComp (0.3),	fParamSpeed (0.6),
+		fParamInput (0.5),	fParamOutput (0.5),	In_db(1.0),		Out_db(1.0),
+		fParamComp (0.2),	fParamSpeed (0.6),
 		fParamGain (0.0),	fParamMix (1.0),
 		fInVuPPM (0.f),		fOutVuPPM (0.f),	fGRVuPPM (0.f),
 		fInVuPPMOld (0.f),	fOutVuPPMOld (0.f),	fGRVuPPMOld (0.f),
@@ -120,11 +120,9 @@ namespace yg331 {
 						switch (paramQueue->getParameterId()) {
 						case kParamInput:
 							fParamInput = (float)value;
-							In_db = norm_to_gain((Vst::Sample64)value);
 							break;
 						case kParamOutput:
 							fParamOutput = (float)value;
-							Out_db = norm_to_gain((Vst::Sample64)value);
 							break;
 						case kParamComp:
 							fParamComp = (float)value;
@@ -311,6 +309,9 @@ namespace yg331 {
 			Vst::Sample64 drySampleL = inputSampleL;
 			Vst::Sample64 drySampleR = inputSampleR;
 
+			inputSampleL *= norm_to_gain(1.0);
+			inputSampleR *= norm_to_gain(1.0);
+
 
 			if (fabs(inputSampleL) > fabs(previousL)) squaredSampleL = previousL * previousL;
 			else squaredSampleL = inputSampleL * inputSampleL;
@@ -457,6 +458,9 @@ namespace yg331 {
 			//applied compression with vari-vari-µ-µ-µ-µ-µ-µ-is-the-kitten-song o/~
 			//applied gain correction to control output level- tends to constrain sound rather than inflate it
 			flip = !flip;
+
+			inputSampleL *= norm_to_gain(0.0);
+			inputSampleR *= norm_to_gain(0.0);
 
 			/*/ VuPPM /*/
 			if (tmpGR > (inputSampleL / drySampleL)) { tmpGR = (inputSampleL / drySampleL); }
